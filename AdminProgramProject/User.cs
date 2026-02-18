@@ -30,14 +30,14 @@ namespace AdminProgramLessons
 
         public User(int id, string name, string address, string email, string telNum, string password, string dOB, int age)
         {
-            // _id = id;
+            _id = id;
             _name = name;
-            // _address = address;
+            _address = address;
             _email = email;
-            // _telNum = telNum;
-            // _passWord = password;
-            // _dOB = dOB;
-            // _age = age;
+            _telNum = telNum;
+            _passWord = password;
+            _dOB = dOB;
+            _age = age;
         }
 
         public void SetEmail(string email)
