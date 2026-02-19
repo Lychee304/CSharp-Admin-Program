@@ -42,13 +42,16 @@ namespace AdminProgramLessons
 
         public void SetEmail(string email)
         {
-            if (email.Contains("@gmail.com"))
+            if (email.Contains("@"))
             {
-                _email = email;
+                if (email.Contains("."))
+                {
+                    _email = email;
+                }
             }
             else
             {
-                Console.WriteLine("ERROR DIT IS GEEN GELDIG EMAIL ADDRESS");
+                Console.WriteLine("that isnt a email, THIS is a email: example@mail.com");
             }
         }
 
