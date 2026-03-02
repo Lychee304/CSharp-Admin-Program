@@ -51,7 +51,7 @@ namespace AdminProgramLessons
             }
             else
             {
-                Console.WriteLine("that isnt a email, THIS is a email: example@mail.com");
+                Console.WriteLine("that isnt a real email, THIS is a email: example@mail.com");
             }
         }
 
