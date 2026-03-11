@@ -10,7 +10,10 @@ namespace AdminProgramLessons
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("naam: ");
+            string _input = Console.ReadLine();
 
+<<<<<<< Updated upstream
 
 
             User amir = new User(0, "amir", "naast de buren", "hey@gmail.com", "+31 12 34 56 78", "password123", "30-04-2006", 19);
@@ -18,6 +21,37 @@ namespace AdminProgramLessons
 
             User user2 = new User(1, "name", "at home", "heyya@gmail.com", "+31 03 69 12 15", "wordpass", "01-01-1990", 36);
             Console.WriteLine(user2.Email);
+=======
+            Console.WriteLine("address: ");
+            string _input2 = Console.ReadLine();
+
+            Console.WriteLine("email: ");
+            string _input3 = Console.ReadLine();
+
+            Console.WriteLine("telefoon nummer: ");
+            string _input4 = Console.ReadLine();
+
+            Console.WriteLine("wachtwoord: ");
+            string _input5 = Console.ReadLine();
+
+            Console.WriteLine("geboortedatum dd/mm: ");
+            string _input6 = Console.ReadLine();
+
+            Console.WriteLine("geboortejaar: ");    
+            int _input7 = int.Parse(Console.ReadLine());
+
+            _input7 = 2025 - _input7;
+
+            User amir = new User(0, _input, _input2, _input3, _input4, _input5, _input6, _input7);
+            Console.WriteLine(amir.Email);
+
+            amir.WriteAll();
+
+
+
+>>>>>>> Stashed changes
         }
     }
 }
+
+
