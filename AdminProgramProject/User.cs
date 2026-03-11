@@ -61,5 +61,13 @@ namespace AdminProgramLessons
             return _email;
         }
 
+<<<<<<< Updated upstream
+=======
+        public void WriteAll()
+        {
+            Console.WriteLine(" naam: " + _name  + "\n address: " + _address + "\n email: " + _email + "\n telefoon nummer: " + _telNum + "\n wachtwoord: " + _passWord + "\n geboortedatum: " + _dOB + "\n leeftijd: " + _age);
+        }
+
+>>>>>>> Stashed changes
     }
 }
