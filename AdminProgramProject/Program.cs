@@ -58,7 +58,7 @@ namespace AdminProgramLessons
 
                     _input7 = 2025 - _input7;
 
-                    User user1 = new User(0, _input, _input2, _input3, _input4, _input5, _input6, _input7);
+                    User user1 = new User(0, _input, _input2, _input3, _input4, _input5, _input6, _input7); // with dynamic naming (example: user + _idCounter) it can probably make multiple users :D )
 
                     Console.WriteLine("wilt u de nieuwe aangemaakte klant zien? J = ja, N = nee");
                     string _askView = Console.ReadLine();
@@ -72,6 +72,16 @@ namespace AdminProgramLessons
                     {
                         Console.WriteLine(_input + " is toegevoegd!");
                     }
+
+                    Console.WriteLine("wil je de informatie veranderen of afsluiten? V = veranderen, A = afsluiten");
+                    string _askProg = Console.ReadLine(); // prog = progress
+
+
+                    if (_askProg == "A")
+                {
+                    Console.WriteLine("ok, fijne dag!");
+                    _turningOn = false;
+                }
                 }
         }
 
