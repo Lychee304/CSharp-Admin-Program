@@ -12,9 +12,10 @@ namespace AdminProgramLessons
 
         //  bool _turningOn = false;
 
-        private int _countingID = 0;
+
+        private static int _countingID = 0;
         private string _userName = "User" + _countingID;
-        
+
         static void Main(string[] args)
         {
 
