@@ -12,15 +12,14 @@ namespace AdminProgramLessons
 
         //  bool _turningOn = false;
 
-
-        private int _countingId = 0;
-        private string _userName = "User";
-
+        private int _countingID = 0;
+        private string _userName = "User" + _countingID;
+        
         static void Main(string[] args)
-        { 
+        {
 
 
-            Console.WriteLine("zet het programma aan? J = ja, N = nee: ");
+        Console.WriteLine("zet het programma aan? J = ja, N = nee: ");
             string _onOff = Console.ReadLine();
 
             bool _turningOn = false;
@@ -69,7 +68,7 @@ namespace AdminProgramLessons
 
                 _input7 = 2025 - _input7;
 
-                User user1 = new User(0, _input, _input2, _input3, _input4, _input5, _input6, _input7); // with dynamic naming (example: user + _idCounter) it can probably make multiple users :D )
+                User _userName = new User(0, _input, _input2, _input3, _input4, _input5, _input6, _input7); // with dynamic naming (example: user + _idCounter) it can probably make multiple users :D )
 
                 Console.WriteLine("wilt u de nieuwe aangemaakte klant zien? J = ja, N = nee");
                 string _askView = Console.ReadLine();
@@ -77,7 +76,7 @@ namespace AdminProgramLessons
 
                 if (_askView == "J")
                 {
-                    user1.WriteAll();
+                    _userName.WriteAll();
                 }
                 else if (_askView == "N")
                 {
@@ -87,10 +86,10 @@ namespace AdminProgramLessons
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("foutmelding, weet u zeker dat de geboortedatum in cijfers zijn ingevoord? bijv: 1990 ipv negentien negentig");
+                    Console.WriteLine("foutmelding 0001!, weet u zeker dat de geboortedatum in cijfers zijn ingevoerd? bijv: 1990 ipv negentien negentig");
                 }
 
-                Console.WriteLine("wil je de informatie veranderen of afsluiten? V = veranderen, A = afsluiten");
+                Console.WriteLine("wil je de informatie veranderen of afsluiten? N = nieuw persoon, A = afsluiten");
                 string _askProg = Console.ReadLine(); // prog = progress
 
 
@@ -98,6 +97,9 @@ namespace AdminProgramLessons
                 {
                     Console.WriteLine("ok, fijne dag!");
                     _turningOn = false;
+                } else if (_askProg == "N")
+                {
+                    _countingID++;
                 }
             }
         }
