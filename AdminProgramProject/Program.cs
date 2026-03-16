@@ -11,26 +11,34 @@ namespace AdminProgramLessons
     {
 
         //  bool _turningOn = false;
-        
+        private int _idCounter = 0;
+
 
         static void Main(string[] args)
         {
 
+            
+
             Console.WriteLine("zet het programma aan? J = ja, N = nee: ");
             string _onOff = Console.ReadLine();
 
-            bool _turningOn = false;
+            private bool _turningOn = false;
+
+            private bool _onOffLoop = true;
+
+            while(_onOffLoop){
 
             if (_onOff == "J")
             {
                 _turningOn = true;
-            } else if (_onOff == "N")
-            {
+                _onOffLoop = false;
+            } else if (_onOff == "N") {
                 Console.WriteLine("ok, fijne dag!");
-            } else
-            {
-                Console.WriteLine("J = ja, N = nee");
+                _onOffLoop = false;
+            } else {
+                Console.WriteLine("J = ja, N = nee, herstart de programma");
             }
+            
 
                 while (_turningOn == true)
                 {
@@ -58,7 +66,7 @@ namespace AdminProgramLessons
 
                     _input7 = 2025 - _input7;
 
-                    User user1 = new User(0, _input, _input2, _input3, _input4, _input5, _input6, _input7); // with dynamic naming (example: user + _idCounter) it can probably make multiple users :D )
+                User user0 = new User(0, _input, _input2, _input3, _input4, _input5, _input6, _input7); // with dynamic naming (example: user + _idCounter) it can probably make multiple users :D 
 
                     Console.WriteLine("wilt u de nieuwe aangemaakte klant zien? J = ja, N = nee");
                     string _askView = Console.ReadLine();
@@ -66,7 +74,7 @@ namespace AdminProgramLessons
 
                     if (_askView == "J")
                     {
-                        user1.WriteAll();
+                        user0.WriteAll();
                     }
                     else if (_askView == "N")
                     {
