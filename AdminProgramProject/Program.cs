@@ -67,22 +67,22 @@ namespace AdminProgramLessons
 
 
 
-                _input7 = 2025 - _input7;
+                    _input7 = 2025 - _input7;
 
-                User _userName = new User(0, _input, _input2, _input3, _input4, _input5, _input6, _input7); // with dynamic naming (example: user + _idCounter) it can probably make multiple users :D )
+                    User _userName = new User(0, _input, _input2, _input3, _input4, _input5, _input6, _input7); // with dynamic naming (example: user + _idCounter) it can probably make multiple users :D )
 
-                Console.WriteLine("wilt u de nieuwe aangemaakte klant zien? J = ja, N = nee");
-                string _askView = Console.ReadLine();
+                    Console.WriteLine("wilt u de nieuwe aangemaakte klant zien? J = ja, N = nee");
+                    string _askView = Console.ReadLine();
 
 
-                if (_askView == "J")
-                {
-                    _userName.WriteAll();
-                }
-                else if (_askView == "N")
-                {
-                    Console.WriteLine(_input + " is toegevoegd!");
-                }
+                    if (_askView == "J")
+                    {
+                        _userName.WriteAll();
+                    }
+                    else if (_askView == "N")
+                    {
+                        Console.WriteLine(_input + " is toegevoegd!");
+                    }
 
                 }
                 catch (Exception)
@@ -90,7 +90,7 @@ namespace AdminProgramLessons
                     Console.WriteLine("foutmelding 0001!, weet u zeker dat de geboortedatum in cijfers zijn ingevoerd? bijv: 1990 ipv negentien negentig");
                 }
 
-                Console.WriteLine("wil je de informatie veranderen of afsluiten? N = nieuw persoon, A = afsluiten");
+                Console.WriteLine("wil je de informatie veranderen of afsluiten? N = nieuw persoon, A = afsluiten, C = checken voor een aangemaakte gebruiker");
                 string _askProg = Console.ReadLine(); // prog = progress
 
 
@@ -101,6 +101,15 @@ namespace AdminProgramLessons
                 } else if (_askProg == "N")
                 {
                     _countingID++;
+                } else if (_askProg == "C")
+                {
+                    Console.WriteLine("ok, toets 'User' en volg deze met de nummer: ");
+                    string _checkUser = Console.ReadLine();
+
+                    _checkUser.WriteAll();
+                } else
+                {
+                    Console.WriteLine("appel");
                 }
             }
         }
