@@ -65,7 +65,7 @@ namespace AdminProgramLessons
                     Console.WriteLine("geboortejaar: ");
                     int _input7 = int.Parse(Console.ReadLine());
 
-                    if(_input7 >= 2026 || _input7 <= 1850) // adjust when the maximum year is the current year
+                    if(_input7 >= 2027 || _input7 <= 1850) // adjust when the maximum year is the current year
                     {
                         Console.WriteLine("foutmelding 0002! weet u zeker dat de geboortejaar correct is ingevoerd? de jaartal is automatisch gezet naar 1950");
                         _input7 = 1950;
@@ -104,7 +104,7 @@ namespace AdminProgramLessons
                     Console.WriteLine("ok, toets 'User' en volg deze met de nummer: ");
                     User _checkUser = Console.ReadLine(); // 'Convert.' is the answer.. how tho
 
-                    _checkUser.WriteAll();  // _checkUser should var type User, not string
+                    _checkUser.WriteAll();  // _checkUser should be var type User, not string
 
 
                 } else if (_askProg == "A")
