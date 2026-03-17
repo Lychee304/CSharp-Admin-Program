@@ -20,7 +20,7 @@ namespace AdminProgramLessons
         {
 
 
-        Console.WriteLine("zet het programma aan? J = ja, N = nee: ");
+        Console.WriteLine("zet het programma aan? J = Ja, N = Nee: ");
             string _onOff = Console.ReadLine();
 
             bool _turningOn = false;
@@ -37,7 +37,7 @@ namespace AdminProgramLessons
             }
             else
             {
-                Console.WriteLine("J = ja, N = nee, het programma moet opnieuw gestart worden");
+                Console.WriteLine("J = Ja, N = Nee, het programma moet opnieuw gestart worden");
             }
 
             while (_turningOn == true)
@@ -65,6 +65,11 @@ namespace AdminProgramLessons
                     Console.WriteLine("geboortejaar: ");
                     int _input7 = int.Parse(Console.ReadLine());
 
+                    if(_input7 >= 2026 || _input7 <= 1850) // adjust when the maximum year is the current year
+                    {
+                        Console.WriteLine("foutmelding 0002! weet u zeker dat de geboortejaar correct is ingevoerd? de jaartal is automatisch gezet naar 1950");
+                        _input7 = 1950;
+                    }
 
 
                     _input7 = 2025 - _input7;
@@ -90,23 +95,28 @@ namespace AdminProgramLessons
                     Console.WriteLine("foutmelding 0001!, weet u zeker dat de geboortedatum in cijfers zijn ingevoerd? bijv: 1990 ipv negentien negentig");
                 }
 
-                Console.WriteLine("wil je de informatie veranderen of afsluiten? N = nieuw persoon, A = afsluiten, C = checken voor een aangemaakte gebruiker");
+                Console.WriteLine("wil je de informatie veranderen of afsluiten? N = Nieuw persoon, A = Afsluiten, C = Checken voor een aangemaakte gebruiker");
                 string _askProg = Console.ReadLine(); // prog = progress
 
 
-                if (_askProg == "A")
+                if (_askProg == "C")
+                {
+                    Console.WriteLine("ok, toets 'User' en volg deze met de nummer: ");
+                    User _checkUser = Console.ReadLine(); // 'Convert.' is the answer.. how tho
+
+                    _checkUser.WriteAll();  // _checkUser should var type User, not string
+
+
+                } else if (_askProg == "A")
                 {
                     Console.WriteLine("ok, fijne dag!");
                     _turningOn = false;
+
+
                 } else if (_askProg == "N")
                 {
                     _countingID++;
-                } else if (_askProg == "C")
-                {
-                    Console.WriteLine("ok, toets 'User' en volg deze met de nummer: ");
-                    string _checkUser = Console.ReadLine();
 
-                    _checkUser.WriteAll();
                 } else
                 {
                     Console.WriteLine("appel");
