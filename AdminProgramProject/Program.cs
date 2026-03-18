@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdminProgramLessons
+namespace AdminProgramProject
 {
     internal class Program
     {
@@ -76,6 +76,8 @@ namespace AdminProgramLessons
 
                     User _userName = new User(0, _input, _input2, _input3, _input4, _input5, _input6, _input7); // with dynamic naming (example: user + _idCounter) it can probably make multiple users :D )
 
+                    Users.add(_userName);
+
                     Console.WriteLine("wilt u de nieuwe aangemaakte klant zien? J = ja, N = nee");
                     string _askView = Console.ReadLine();
 
@@ -105,11 +107,11 @@ namespace AdminProgramLessons
                     int _checkUser = int.Parse(Console.ReadLine()); // 'Convert.' is the answer.. how tho
 
 
-                    User _checkUser = ShowUserID(_countingID);  // _checkUser should be var type User, not string
+                    User _checkUser = ShowUserWID(_countingID);  // _checkUser should be var type User, not string
 
 
                 } else if (_askProg == "A")
-                {
+                { 
                     Console.WriteLine("ok, fijne dag!");
                     _turningOn = false;
 

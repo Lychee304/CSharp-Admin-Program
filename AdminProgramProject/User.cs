@@ -5,7 +5,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdminProgramLessons
+namespace AdminProgramProject
 {
     internal class User
     {
@@ -24,7 +24,6 @@ namespace AdminProgramLessons
             get { return _email; }
             set { _email = value; }
         }
-
 
 
 
@@ -55,6 +54,10 @@ namespace AdminProgramLessons
             }
         }
 
+        public int GetID()
+        {
+            return _id;
+        }
 
         public string GetEmail()
         {
