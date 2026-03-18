@@ -86,7 +86,7 @@ namespace AdminProgramLessons
                     }
                     else if (_askView == "N")
                     {
-                        Console.WriteLine(_input + " is toegevoegd!");
+                        Console.WriteLine(_input + " is toegevoegd met nummer " + _countingID + "!");
                     }
 
                 }
@@ -101,10 +101,11 @@ namespace AdminProgramLessons
 
                 if (_askProg == "C")
                 {
-                    Console.WriteLine("ok, toets 'User' en volg deze met de nummer: ");
-                    User _checkUser = Console.ReadLine(); // 'Convert.' is the answer.. how tho
+                    Console.WriteLine("ok, toets de nummer in van de gebruiker: ");
+                    int _checkUser = int.Parse(Console.ReadLine()); // 'Convert.' is the answer.. how tho
 
-                    _checkUser.WriteAll();  // _checkUser should be var type User, not string
+
+                    User _checkUser = ShowUserID(_countingID);  // _checkUser should be var type User, not string
 
 
                 } else if (_askProg == "A")
