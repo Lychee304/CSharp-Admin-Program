@@ -8,9 +8,6 @@ namespace AdminProgramProject
 {
     internal class UserDatabase
     {
-<<<<<<< Updated upstream
-        
-=======
         // base for the user data
         // data of the user
         // user of the data
@@ -24,7 +21,6 @@ namespace AdminProgramProject
         {
             Users.add(_userName);
         }
->>>>>>> Stashed changes
     }
 }
 
