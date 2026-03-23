@@ -9,8 +9,8 @@ namespace AdminProgramProject
     internal class UserDatabase
     {
         // base for the user data
-        // data of the user
         // user of the data
+        // data of the user
         // wow, such poetry
         // alright cya later!
 
