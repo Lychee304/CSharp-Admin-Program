@@ -16,10 +16,11 @@ namespace AdminProgramProject
 
         public static List<User> Users = new List<User>();
 
+        GetUser();
 
         public void AddUserToDBase()   // DBase = data base
         {
-            Users.add(_userName);
+            Users.Add(_userName);
         }
     }
 }

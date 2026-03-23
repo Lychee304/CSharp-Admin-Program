@@ -1,7 +1,13 @@
-﻿using System;
+﻿
+// When I wrote this, only God and I understood what I was doing.
+// Now, God only knows.
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,6 +24,8 @@ namespace AdminProgramLessons
 
         static void Main(string[] args)
         {
+
+
 
 
             Console.WriteLine("zet het programma aan? J = Ja, N = Nee: ");
@@ -76,6 +84,9 @@ namespace AdminProgramLessons
 
                     User _userName = new User(0, _input, _input2, _input3, _input4, _input5, _input6, _input7); // with dynamic naming (example: user + _idCounter) it can probably make multiple users :D )
 
+
+
+
                     Console.WriteLine("wilt u de nieuwe aangemaakte klant zien? J = ja, N = nee");
                     string _askView = Console.ReadLine();
 
@@ -109,6 +120,8 @@ namespace AdminProgramLessons
 
 
                 }
+
+
                 else if (_askProg == "A")
                 {
                     Console.WriteLine("ok, fijne dag!");
@@ -125,9 +138,15 @@ namespace AdminProgramLessons
                 {
                     Console.WriteLine("appel");
                 }
+
+            }
+
+            Public User GetUserName();
+            {
+
+                return _userName;
+
             }
         }
     }
 }
-
-
