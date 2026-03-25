@@ -3,6 +3,7 @@
 // Now, God only knows.
 
 
+using AdminProgramProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,12 @@ namespace AdminProgramLessons
 {
     internal class Program
     {
+
+
+        public void GetList()
+        {
+            List<User> AddUserToList = UserDatabase.GetList();
+        }
 
         //  bool _turningOn = false;
 
@@ -41,7 +48,7 @@ namespace AdminProgramLessons
             }
             else if (_onOff == "N")
             {
-                Console.WriteLine("ok, fijne dag!");
+                Console.WriteLine("ok, fijne dag?");
             }
             else
             {
@@ -73,7 +80,7 @@ namespace AdminProgramLessons
                     Console.WriteLine("geboortejaar: ");
                     int _input7 = int.Parse(Console.ReadLine());
 
-                    if (_input7 >= 2027 || _input7 <= 1850) // adjust when the maximum year is the current year
+                    if (_input7 >= 2027 || _input7 <= 1850) // adjust when the maximum year is the current year, enter the current year +1
                     {
                         Console.WriteLine("foutmelding 0002! weet u zeker dat de geboortejaar correct is ingevoerd? de jaartal is automatisch gezet naar 1950");
                         _input7 = 1950;
@@ -82,7 +89,7 @@ namespace AdminProgramLessons
 
                     _input7 = 2025 - _input7;
 
-                    User _userName = new User(0, _input, _input2, _input3, _input4, _input5, _input6, _input7); // with dynamic naming (example: user + _idCounter) it can probably make multiple users :D )
+                    User _userName = new User(_countingID, _input, _input2, _input3, _input4, _input5, _input6, _input7); // with dynamic naming (example: user + _idCounter) it can probably make multiple users :D )
 
 
 
@@ -116,7 +123,7 @@ namespace AdminProgramLessons
                     int _checkUser = int.Parse(Console.ReadLine()); // 'Convert.' is the answer.. how tho
 
 
-                    User _userName = ShowUserWID(_countingID);  // _checkUser should be var type User, not string
+                   //  User _userName = ShowUserWID(_countingID);  // _checkUser should be var type User, not string
 
 
                 }
@@ -138,13 +145,6 @@ namespace AdminProgramLessons
                 {
                     Console.WriteLine("appel");
                 }
-
-            }
-
-            Public User GetUserName();
-            {
-
-                return _userName;
 
             }
         }

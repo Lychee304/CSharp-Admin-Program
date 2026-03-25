@@ -1,4 +1,12 @@
-﻿using System;
+﻿
+// user database
+// base for the user data
+// user of the data
+// data of the user
+// wow, such poetry
+// alright cya later!
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,20 +16,12 @@ namespace AdminProgramProject
 {
     internal class UserDatabase
     {
-        // base for the user data
-        // user of the data
-        // data of the user
-        // wow, such poetry
-        // alright cya later!
 
-        public static List<User> Users = new List<User>();
+        private static List<AdminProgramLessons.User> UsersList = new List<AdminProgramLessons.User>();
 
-        GetUser();
-
-        public void AddUserToDBase()   // DBase = data base
+        public static List<AdminProgramLessons.User> GetList()
         {
-            Users.Add(_userName);
+            return UsersList;
         }
     }
 }
-
