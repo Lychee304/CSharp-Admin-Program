@@ -6,13 +6,14 @@
 using AdminProgramProject;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdminProgramLessons
+namespace AdminProgramProject
 {
     internal class Program
     {
@@ -48,7 +49,7 @@ namespace AdminProgramLessons
             }
             else if (_onOff == "N")
             {
-                Console.WriteLine("ok, fijne dag?");
+                Console.WriteLine("ok, fijne dag?"); // see, even the code is confused
             }
             else
             {
@@ -119,11 +120,12 @@ namespace AdminProgramLessons
 
                 if (_askProg == "C")
                 {
-                    Console.WriteLine("ok, toets de nummer in van de gebruiker: ");
-                    int _checkUser = int.Parse(Console.ReadLine()); // 'Convert.' is the answer.. how tho
+                    // Console.WriteLine("ok, toets de nummer in van de gebruiker: ");
+                    // int _checkUser = int.Parse(Console.ReadLine()); // 'Convert.' is the answer.. how tho
 
+                    LoopUserList();
 
-                   //  User _userName = ShowUserWID(_countingID);  // _checkUser should be var type User, not string
+                    //  User _userName = ShowUserWID(_countingID);  // _checkUser should be var type User, not string
 
 
                 }

@@ -6,7 +6,6 @@
 // wow, such poetry
 // alright cya later!
 
-using AdminProgramLessons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,5 +23,14 @@ namespace AdminProgramProject
         {
             return UsersList;
         }
-    }
+
+        public int LoopUserList()
+        {
+
+            for (int i = 0; i < UsersList; i++)
+            {
+                Console.WriteLine(UsersList[i]);
+            }
+        }
+}
 }

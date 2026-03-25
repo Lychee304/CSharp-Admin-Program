@@ -2,7 +2,6 @@
 // it works without errors or warnings
 // DO NOT TOUCH
 
-using AdminProgramLessons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +10,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdminProgramLessons
+namespace AdminProgramProject
 {
     internal class User
     {
