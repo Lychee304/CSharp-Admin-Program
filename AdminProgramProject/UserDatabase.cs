@@ -6,6 +6,7 @@
 // wow, such poetry
 // alright cya later!
 
+using AdminProgramLessons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,9 @@ namespace AdminProgramProject
     internal class UserDatabase
     {
 
-        private static List<AdminProgramLessons.User> UsersList = new List<AdminProgramLessons.User>();
+        private static List<User> UsersList = new List<User>();
 
-        public static List<AdminProgramLessons.User> GetList()
+        public static List<User> GetList()
         {
             return UsersList;
         }
