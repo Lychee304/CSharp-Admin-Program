@@ -1,14 +1,27 @@
-﻿using System;
+﻿
+// When I wrote this, only God and I understood what I was doing.
+// Now, God only knows.
+
+
+using AdminProgramProject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdminProgramProject
+namespace AdminProgramLessons
 {
     internal class Program
     {
+
+
+        public void GetList()
+        {
+            List<User> AddUserToList = UserDatabase.GetList();
+        }
 
         //  bool _turningOn = false;
 
@@ -20,12 +33,14 @@ namespace AdminProgramProject
         {
 
 
-        Console.WriteLine("zet het programma aan? J = Ja, N = Nee: ");
+
+
+            Console.WriteLine("zet het programma aan? J = Ja, N = Nee: ");
             string _onOff = Console.ReadLine();
 
             bool _turningOn = false;
 
-            
+
 
             if (_onOff == "J")
             {
@@ -33,7 +48,7 @@ namespace AdminProgramProject
             }
             else if (_onOff == "N")
             {
-                Console.WriteLine("ok, fijne dag!");
+                Console.WriteLine("ok, fijne dag?");
             }
             else
             {
@@ -65,7 +80,7 @@ namespace AdminProgramProject
                     Console.WriteLine("geboortejaar: ");
                     int _input7 = int.Parse(Console.ReadLine());
 
-                    if(_input7 >= 2027 || _input7 <= 1850) // adjust when the maximum year is the current year
+                    if (_input7 >= 2027 || _input7 <= 1850) // adjust when the maximum year is the current year, enter the current year +1
                     {
                         Console.WriteLine("foutmelding 0002! weet u zeker dat de geboortejaar correct is ingevoerd? de jaartal is automatisch gezet naar 1950");
                         _input7 = 1950;
@@ -74,9 +89,10 @@ namespace AdminProgramProject
 
                     _input7 = 2025 - _input7;
 
-                    User _userName = new User(0, _input, _input2, _input3, _input4, _input5, _input6, _input7); // with dynamic naming (example: user + _idCounter) it can probably make multiple users :D )
+                    User _userName = new User(_countingID, _input, _input2, _input3, _input4, _input5, _input6, _input7); // with dynamic naming (example: user + _idCounter) it can probably make multiple users :D )
 
-                    Users.add(_userName);
+
+
 
                     Console.WriteLine("wilt u de nieuwe aangemaakte klant zien? J = ja, N = nee");
                     string _askView = Console.ReadLine();
@@ -107,26 +123,30 @@ namespace AdminProgramProject
                     int _checkUser = int.Parse(Console.ReadLine()); // 'Convert.' is the answer.. how tho
 
 
-                    User _checkUser = ShowUserWID(_countingID);  // _checkUser should be var type User, not string
+                   //  User _userName = ShowUserWID(_countingID);  // _checkUser should be var type User, not string
 
 
-                } else if (_askProg == "A")
-                { 
+                }
+
+
+                else if (_askProg == "A")
+                {
                     Console.WriteLine("ok, fijne dag!");
                     _turningOn = false;
 
 
-                } else if (_askProg == "N")
+                }
+                else if (_askProg == "N")
                 {
                     _countingID++;
 
-                } else
+                }
+                else
                 {
                     Console.WriteLine("appel");
                 }
+
             }
         }
     }
 }
-
-
