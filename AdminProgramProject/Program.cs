@@ -2,7 +2,6 @@
 // When I wrote this, only God and I understood what I was doing.
 // Now, God only knows.
 
-
 using AdminProgramProject;
 using System;
 using System.Collections.Generic;
@@ -18,10 +17,18 @@ namespace AdminProgramProject
     internal class Program
     {
 
-
-        public void GetList()
+        
+        public static void GetList()
         {
-            List<User> AddUserToList = UserDatabase.GetList();
+            List<User> UsersList = Testing.GetList();
+        }
+
+        public static void LoopUserList(List<User> UsersList)
+        {
+            for (int i = 0;i < UsersList.Count; i++)
+            {
+                Console.WriteLine(UsersList[i]);
+            }
         }
 
         //  bool _turningOn = false;
@@ -29,6 +36,8 @@ namespace AdminProgramProject
 
         private static int _countingID = 0;
         private string _userName = "User" + _countingID;
+
+
 
         static void Main(string[] args)
         {
@@ -49,7 +58,7 @@ namespace AdminProgramProject
             }
             else if (_onOff == "N")
             {
-                Console.WriteLine("ok, fijne dag?"); // see, even the code is confused
+                Console.WriteLine("ok, fijne dag?");
             }
             else
             {
@@ -92,6 +101,10 @@ namespace AdminProgramProject
 
                     User _userName = new User(_countingID, _input, _input2, _input3, _input4, _input5, _input6, _input7); // with dynamic naming (example: user + _idCounter) it can probably make multiple users :D )
 
+                    // GetList();
+
+                    _userName.add(Testing.UsersList);
+
 
 
 
@@ -116,6 +129,7 @@ namespace AdminProgramProject
 
                 Console.WriteLine("wil je de informatie veranderen of afsluiten? N = Nieuw persoon, A = Afsluiten, C = Checken voor een aangemaakte gebruiker");
                 string _askProg = Console.ReadLine(); // prog = progress
+
 
 
                 if (_askProg == "C")

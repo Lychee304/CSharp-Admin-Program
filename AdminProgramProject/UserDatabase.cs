@@ -1,10 +1,12 @@
 ﻿
-// user database
+/* user database
 // base for the user data
 // user of the data
 // data of the user
 // wow, such poetry
 // alright cya later!
+
+// y'know, I didnt mean 'hide from the solution explorer...'
 
 using System;
 using System.Collections.Generic;
@@ -32,5 +34,7 @@ namespace AdminProgramProject
                 Console.WriteLine(UsersList[i]);
             }
         }
+    }
 }
-}
+
+*/
