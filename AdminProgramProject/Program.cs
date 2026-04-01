@@ -11,6 +11,7 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+[assembly: InternalsVisibleTo("Testing.cs")]
 
 namespace AdminProgramProject
 {
@@ -103,7 +104,7 @@ namespace AdminProgramProject
 
                     // GetList();
 
-                    _userName.add(Testing.UsersList);
+                    _userName.Add(Testing.UsersList);
 
 
 
@@ -130,14 +131,14 @@ namespace AdminProgramProject
                 Console.WriteLine("wil je de informatie veranderen of afsluiten? N = Nieuw persoon, A = Afsluiten, C = Checken voor een aangemaakte gebruiker");
                 string _askProg = Console.ReadLine(); // prog = progress
 
-
+                
 
                 if (_askProg == "C")
                 {
                     // Console.WriteLine("ok, toets de nummer in van de gebruiker: ");
                     // int _checkUser = int.Parse(Console.ReadLine()); // 'Convert.' is the answer.. how tho
 
-                    LoopUserList();
+                    Testing.LoopUserList();
 
                     //  User _userName = ShowUserWID(_countingID);  // _checkUser should be var type User, not string
 

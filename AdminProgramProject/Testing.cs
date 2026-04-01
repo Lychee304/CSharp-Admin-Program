@@ -6,8 +6,10 @@ using AdminProgramProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+[assembly: InternalsVisibleTo("Program.cs")]
 // using System.hopes.and.dreams
 
 namespace AdminProgramProject
@@ -15,23 +17,23 @@ namespace AdminProgramProject
     internal class Testing
     {
 
-            private static List<User> UsersList = new List<User>();
+        private static List<User> UsersList = new List<User>();
 
-            public static List<User> GetList()
+        public static List<User> GetList()
+        {
+            return UsersList;
+        }
+
+        public void LoopUserList()
+        {
+
+            for (int i = 0; i < UsersList.Count; i++)
             {
-                return UsersList;
-            }
-
-            public void LoopUserList()
-            {
-
-                for (int i = 0; i < UsersList.Count; i++)
-                {
-                    Console.WriteLine(UsersList[i]);
-                }
+                Console.WriteLine(UsersList[i]);
             }
         }
-    
+    }
+}
 
 
 
@@ -86,5 +88,5 @@ internal class UserDatabase
 
 
      */
-}
+
 
