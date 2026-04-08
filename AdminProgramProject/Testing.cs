@@ -34,8 +34,8 @@ namespace AdminProgramProject
         }
 
         public static void AddUser()
-        { 
-            "name".Add(UsersList);
+        {
+            UsersList.Add(User);
         }
     }
 }
