@@ -2,10 +2,6 @@
 // When I wrote this, only God and I understood what I was doing.
 // Now, God only knows.
 
-<<<<<<< Updated upstream
-=======
-using AdminProgramLessons;
->>>>>>> Stashed changes
 using AdminProgramProject;
 using System;
 using System.Collections.Generic;
@@ -22,23 +18,8 @@ namespace AdminProgramProject
     internal class Program
     {
 
-<<<<<<< Updated upstream
-        
-        public static void GetList()
-        {
-            List<User> UsersList = Testing.GetList();
-        }
 
-        public static void LoopUserList(List<User> UsersList)
-        {
-            for (int i = 0;i < UsersList.Count; i++)
-            {
-                Console.WriteLine(UsersList[i]);
-            }
-        }
 
-=======
->>>>>>> Stashed changes
         //  bool _turningOn = false;
 
 
@@ -111,13 +92,7 @@ namespace AdminProgramProject
 
                     // GetList();
 
-<<<<<<< Updated upstream
-                    _userName.Add(Testing.UsersList);
-=======
                     _userName.Add(GetList());
->>>>>>> Stashed changes
-
-
 
 
                     Console.WriteLine("wilt u de nieuwe aangemaakte klant zien? J = ja, N = nee");
@@ -142,19 +117,15 @@ namespace AdminProgramProject
                 Console.WriteLine("wil je de informatie veranderen of afsluiten? N = Nieuw persoon, A = Afsluiten, C = Checken voor een aangemaakte gebruiker");
                 string _askProg = Console.ReadLine(); // prog = progress
 
-                
+
 
                 if (_askProg == "C")
                 {
                     // Console.WriteLine("ok, toets de nummer in van de gebruiker: ");
                     // int _checkUser = int.Parse(Console.ReadLine()); // 'Convert.' is the answer.. how tho
 
-                    Testing.LoopUserList();
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
                     //  User _userName = ShowUserWID(_countingID);  // _checkUser should be var type User, not string
 
 
@@ -182,3 +153,4 @@ namespace AdminProgramProject
         }
     }
 }
+

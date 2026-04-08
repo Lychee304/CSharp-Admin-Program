@@ -24,13 +24,18 @@ namespace AdminProgramProject
             return UsersList;
         }
 
-        public void LoopUserList()
+        public static void LoopUserList()
         {
 
             for (int i = 0; i < UsersList.Count; i++)
             {
                 Console.WriteLine(UsersList[i]);
             }
+        }
+
+        public static void AddUser()
+        { 
+            "name".Add(UsersList);
         }
     }
 }
