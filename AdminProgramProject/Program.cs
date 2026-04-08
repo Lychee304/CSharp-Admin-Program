@@ -2,6 +2,10 @@
 // When I wrote this, only God and I understood what I was doing.
 // Now, God only knows.
 
+<<<<<<< Updated upstream
+=======
+using AdminProgramLessons;
+>>>>>>> Stashed changes
 using AdminProgramProject;
 using System;
 using System.Collections.Generic;
@@ -18,6 +22,7 @@ namespace AdminProgramProject
     internal class Program
     {
 
+<<<<<<< Updated upstream
         
         public static void GetList()
         {
@@ -32,6 +37,8 @@ namespace AdminProgramProject
             }
         }
 
+=======
+>>>>>>> Stashed changes
         //  bool _turningOn = false;
 
 
@@ -104,7 +111,11 @@ namespace AdminProgramProject
 
                     // GetList();
 
+<<<<<<< Updated upstream
                     _userName.Add(Testing.UsersList);
+=======
+                    _userName.Add(GetList());
+>>>>>>> Stashed changes
 
 
 
@@ -140,6 +151,10 @@ namespace AdminProgramProject
 
                     Testing.LoopUserList();
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
                     //  User _userName = ShowUserWID(_countingID);  // _checkUser should be var type User, not string
 
 

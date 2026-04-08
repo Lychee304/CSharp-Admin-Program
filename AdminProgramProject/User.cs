@@ -72,5 +72,12 @@ namespace AdminProgramProject
             Console.WriteLine(_name, ", address:  ", _address, ", email: ", _email, ", telefoon nummer: ", _telNum, ", wachtwoord: ", _passWord, ", geboortedatum: ", _dOB, ", leeftijd: ", _age, ", ");
         }
 
+
+
+        public static void AddUser()
+        {
+            UsersList.Add(User);
+        }
+
     }
 }
