@@ -1,5 +1,4 @@
-﻿
-// When I wrote this, only God and I understood what I was doing.
+﻿// When I wrote this, only God and I understood what I was doing.
 // Now, God only knows.
 
 
@@ -18,9 +17,18 @@ namespace AdminProgramLessons
     {
 
 
+        public static void GetList()
+        {
+            List<User> UsersList = Testing.GetList();
+        }
+
         public void GetList()
         {
             List<User> AddUserToList = UserDatabase.GetList();
+            for (int i = 0; i < UsersList.Count; i++)
+            {
+                Console.WriteLine(UsersList[i]);
+            }
         }
 
         //  bool _turningOn = false;
@@ -91,6 +99,10 @@ namespace AdminProgramLessons
 
                     User _userName = new User(_countingID, _input, _input2, _input3, _input4, _input5, _input6, _input7); // with dynamic naming (example: user + _idCounter) it can probably make multiple users :D )
 
+                    // GetList();
+
+                   _userName.Add(Testing.GetList());
+
 
 
 
@@ -115,6 +127,7 @@ namespace AdminProgramLessons
 
                 Console.WriteLine("wil je de informatie veranderen of afsluiten? N = Nieuw persoon, A = Afsluiten, C = Checken voor een aangemaakte gebruiker");
                 string _askProg = Console.ReadLine(); // prog = progress
+
 
 
                 if (_askProg == "C")
