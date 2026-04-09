@@ -18,6 +18,17 @@ namespace AdminProgramProject
     internal class Program
     {
 
+        private static List<User> UsersList = new List<User>();
+
+        public static List<User> GetList()
+        {
+            return UsersList;
+        }
+
+        public static void Add()
+        {
+            _userName.Add(UsersList);
+        }
 
 
         //  bool _turningOn = false;
@@ -90,9 +101,11 @@ namespace AdminProgramProject
 
                     User _userName = new User(_countingID, _input, _input2, _input3, _input4, _input5, _input6, _input7); // with dynamic naming (example: user + _idCounter) it can probably make multiple users :D )
 
+                    Add();
+
                     // GetList();
 
-                    _userName.Add(GetList());
+
 
 
                     Console.WriteLine("wilt u de nieuwe aangemaakte klant zien? J = ja, N = nee");
