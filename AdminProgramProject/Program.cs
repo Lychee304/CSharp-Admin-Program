@@ -25,11 +25,6 @@ namespace AdminProgramProject
             return UsersList;
         }
 
-        public static void Add()
-        {
-            _userName.Add(UsersList);
-        }
-
 
         //  bool _turningOn = false;
 
@@ -101,7 +96,7 @@ namespace AdminProgramProject
 
                     User _userName = new User(_countingID, _input, _input2, _input3, _input4, _input5, _input6, _input7); // with dynamic naming (example: user + _idCounter) it can probably make multiple users :D )
 
-                    Add();
+                    _userName.Add(AddUser());
 
                     // GetList();
 
@@ -137,7 +132,7 @@ namespace AdminProgramProject
                     // Console.WriteLine("ok, toets de nummer in van de gebruiker: ");
                     // int _checkUser = int.Parse(Console.ReadLine()); // 'Convert.' is the answer.. how tho
 
-
+                    UsersList.LoopUserList();
 
                     //  User _userName = ShowUserWID(_countingID);  // _checkUser should be var type User, not string
 
@@ -161,7 +156,6 @@ namespace AdminProgramProject
                 {
                     Console.WriteLine("appel");
                 }
-
             }
         }
     }

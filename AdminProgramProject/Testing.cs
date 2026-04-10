@@ -17,6 +17,8 @@ namespace AdminProgramProject
     internal class Testing
     {
 
+        static User _userName;
+
         private static List<User> UsersList = new List<User>();
 
         public static List<User> GetList()
@@ -24,7 +26,7 @@ namespace AdminProgramProject
             return UsersList;
         }
 
-        public static void LoopUserList()
+        public void LoopUserList()
         {
 
             for (int i = 0; i < UsersList.Count; i++)
@@ -35,7 +37,7 @@ namespace AdminProgramProject
 
         public static void AddUser()
         {
-            // UsersList.Add;
+            UsersList.Add(_userName);
         }
     }
 }
