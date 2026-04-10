@@ -18,13 +18,6 @@ namespace AdminProgramProject
     internal class Program
     {
 
-        private static List<User> UsersList = new List<User>();
-
-        public static List<User> GetList()
-        {
-            return UsersList;
-        }
-
 
         //  bool _turningOn = false;
 
@@ -132,7 +125,7 @@ namespace AdminProgramProject
                     // Console.WriteLine("ok, toets de nummer in van de gebruiker: ");
                     // int _checkUser = int.Parse(Console.ReadLine()); // 'Convert.' is the answer.. how tho
 
-                    UsersList.Testing.LoopUserList(UsersList);
+                    Testing.UsersList.LoopUserList(Testing.UsersList);
 
                     //  User _userName = ShowUserWID(_countingID);  // _checkUser should be var type User, not string
 
