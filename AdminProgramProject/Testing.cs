@@ -17,7 +17,7 @@ namespace AdminProgramProject
     internal class Testing
     {
 
-        static User _userName;
+        private static User _userName;
 
         private static List<User> UsersList = new List<User>();
 
