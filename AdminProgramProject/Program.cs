@@ -100,7 +100,7 @@ namespace AdminProgramProject
 
                     // GetList();
 
-
+                    //
 
 
                     Console.WriteLine("wilt u de nieuwe aangemaakte klant zien? J = ja, N = nee");
