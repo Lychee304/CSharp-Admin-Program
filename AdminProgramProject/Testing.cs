@@ -26,7 +26,7 @@ namespace AdminProgramProject
             return UsersList;
         }
 
-        public void LoopUserList()
+        public static void LoopUserList()
         {
 
             for (int i = 0; i < UsersList.Count; i++)

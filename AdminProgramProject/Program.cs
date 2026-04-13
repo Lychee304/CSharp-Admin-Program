@@ -30,7 +30,7 @@ namespace AdminProgramProject
         static void Main(string[] args)
         {
 
-
+            Testing.GetList();
 
 
             Console.WriteLine("zet het programma aan? J = Ja, N = Nee: ");
@@ -89,7 +89,7 @@ namespace AdminProgramProject
 
                     User _userName = new User(_countingID, _input, _input2, _input3, _input4, _input5, _input6, _input7); // with dynamic naming (example: user + _idCounter) it can probably make multiple users :D )
 
-                    _userName.Add(Testing.AddUser()); // <-- how did that work? i want pizza now... mmmmmmm mushroom pizza
+                    Testing.AddUser(); // just... please work i'll personally give you a tientje
 
                     // GetList();
 
@@ -125,7 +125,7 @@ namespace AdminProgramProject
                     // Console.WriteLine("ok, toets de nummer in van de gebruiker: ");
                     // int _checkUser = int.Parse(Console.ReadLine()); // 'Convert.' is the answer.. how tho
 
-                    Testing.UsersList.LoopUserList(Testing.UsersList);
+                    Testing.LoopUserList();
 
                     //  User _userName = ShowUserWID(_countingID);  // _checkUser should be var type User, not string
 
