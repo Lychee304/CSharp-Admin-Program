@@ -115,11 +115,26 @@ namespace AdminProgramProject
 
                 if (_askProg == "C")
                 {
+                    Console.WriteLine("wilt u ze allen bekijken of een klant opzoeken met een ID nummer? A = alle klanten zien, N = nummer voor klant");
+                    string _userSearch = Console.ReadLine();
+
                     // Console.WriteLine("ok, toets de nummer in van de gebruiker: ");
                     // int _checkUser = int.Parse(Console.ReadLine()); // 'Convert.' is the answer.. how tho
 
-                    Database.LoopUserList();
 
+                    if (_userSearch == "A")
+                    {
+                        Database.LoopUserList();
+                    } else if (_userSearch == "N")
+                    {
+
+                        DataBase.GetList();
+
+                        Console.WriteLine("ok, toets de nummer in van de gebruiker: ");
+                        int _checkUser = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine(Database.UsersList[_checkUser]);
+                    }
                     //  User _userName = ShowUserWID(_countingID);  // _checkUser should be var type User, not string
 
 
