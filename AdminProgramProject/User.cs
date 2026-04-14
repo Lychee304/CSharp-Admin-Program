@@ -69,7 +69,7 @@ namespace AdminProgramProject
 
         public void WriteAll()
         {
-            Console.WriteLine(_name, ", address:  ", _address, ", email: ", _email, ", telefoon nummer: ", _telNum, ", wachtwoord: ", _passWord, ", geboortedatum: ", _dOB, ", leeftijd: ", _age, ", ");
+            Console.WriteLine(_name + ", address:  " + _address + ", email: " + _email + ", telefoon nummer: " + _telNum + ", wachtwoord: " + _passWord + ", geboortedatum: " + _dOB + ", leeftijd: " + _age);
         }
 
        
