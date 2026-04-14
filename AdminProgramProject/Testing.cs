@@ -9,35 +9,35 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-[assembly: InternalsVisibleTo("Program.cs")]
-// using System.hopes.and.dreams
+[assembly: InternalsVisibleTo("AdminProgram.cs")]
+// using System.Hopes.And.Dreams
 
 namespace AdminProgramProject
 {
     internal class Testing
     {
 
-        private static User _userName;
+        // private User _userName = "User" + AdminProgram._countingID;      <-- bruh how you a error? yo a comment
 
-        private static List<User> UsersList = new List<User>();
+        private List<User> UsersList = new List<User>();
 
-        public static List<User> GetList()
+        public List<User> GetList()
         {
             return UsersList;
         }
 
-        public static void LoopUserList()
+        public void LoopUserList()
         {
 
             for (int i = 0; i < UsersList.Count; i++)
             {
-                Console.WriteLine(UsersList[i]);
+                UsersList[i].WriteAll();
             }
         }
 
-        public static void AddUser()
+        public void AddUser(User newUser)
         {
-            UsersList.Add(_userName);
+            UsersList.Add(newUser);
         }
     }
 }
