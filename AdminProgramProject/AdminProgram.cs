@@ -12,6 +12,7 @@ namespace AdminProgramProject
         Testing Database = new Testing();
         public static int _countingID = 0;
         private static User _userName;
+        private int _AmountOfUser = _countingID + 1;
 
         //  = "User" + _countingID
         public static User GetUser()
@@ -87,7 +88,7 @@ namespace AdminProgramProject
                     // GetList();
 
 
-
+                    Console.Clear();
 
                     Console.WriteLine("wilt u de nieuwe aangemaakte klant zien? J = ja, N = nee");
                     string _askView = Console.ReadLine();
@@ -102,6 +103,7 @@ namespace AdminProgramProject
                         Console.WriteLine(_input + " is toegevoegd met nummer " + _countingID + "!");
                     }
 
+
                 }
                 catch (Exception)
                 {
@@ -115,6 +117,7 @@ namespace AdminProgramProject
 
                 if (_askProg == "C")
                 {
+                    Console.Clear();
                     Console.WriteLine("wilt u ze allen bekijken of een klant opzoeken met een ID nummer? A = alle klanten zien, N = nummer voor klant");
                     string _userSearch = Console.ReadLine();
 
@@ -127,23 +130,29 @@ namespace AdminProgramProject
                         Database.LoopUserList();
                     } else if (_userSearch == "N")
                     {
+                        try
+                        {
+                            Console.WriteLine("ok, toets de nummer in van de gebruiker: ");
+                            int _checkUser = int.Parse(Console.ReadLine());
 
-                        DataBase.GetList();
+                            Database.GetList()[_checkUser].WriteAll(); // <-- thx GPT :P
 
-                        Console.WriteLine("ok, toets de nummer in van de gebruiker: ");
-                        int _checkUser = int.Parse(Console.ReadLine());
-
-                        Console.WriteLine(Database.UsersList[_checkUser]);
+                        } catch (Exception)
+                        {
+                            Console.WriteLine("foutmelding 0003! weet u zeker dat de gebruiker bestaat? er zijn " + _AmountOfUser + " klanten opgeslagen");
+                        }
                     }
                     //  User _userName = ShowUserWID(_countingID);  // _checkUser should be var type User, not string
 
 
                 }
+                
 
 
 
                 else if (_askProg == "A")
                 {
+                    Console.Clear();
                     Console.WriteLine("ok, fijne dag!");
                     _turningOn = false;
 
@@ -151,11 +160,13 @@ namespace AdminProgramProject
                 }
                 else if (_askProg == "N")
                 {
+                    Console.Clear();
                     _countingID++;
 
                 }
                 else
                 {
+                    Console.Clear();
                     Console.WriteLine("appel");
                 }
             }
