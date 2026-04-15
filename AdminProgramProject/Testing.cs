@@ -17,6 +17,7 @@ namespace AdminProgramProject
     internal class Testing
     {
 
+
         // private User _userName = "User" + AdminProgram._countingID;      <-- bruh how you a error? yo a comment
 
         private List<User> UsersList = new List<User>();
@@ -38,6 +39,12 @@ namespace AdminProgramProject
         public void AddUser(User newUser)
         {
             UsersList.Add(newUser);
+        }
+
+        public void EditUser(User newUser)
+        {
+            UsersList.Add(newUser);
+            UsersList.Insert(0, newUser);
         }
     }
 }

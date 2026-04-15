@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,6 +14,7 @@ namespace AdminProgramProject
         public static int _countingID = 0;
         private static User _userName;
         private int _AmountOfUser = _countingID + 1;
+        private static User _newUserName;
 
         //  = "User" + _countingID
         public static User GetUser()
@@ -190,16 +192,103 @@ namespace AdminProgramProject
 
                         string _deleteUser = Console.ReadLine();
 
+
                         if(_deleteUser == "J")
                         {
                             Console.Clear();
                             Database.GetList().RemoveAt(_checkUser);
                             Console.WriteLine("gebruiker met ID '" + _checkUser + "' is verwijderd, het deed gelukkig geen pijn");
+                            _AmountOfUser--;
+                        }
+                        else if (_deleteUser == "N")
+                        {
+                            Console.Clear();
+                            Console.WriteLine("ok, dan niet. Ze zullen vast blij zijn");
                         }
                     }
                     catch (Exception)
                     {
-                        Console.WriteLine("foutmelding 0003! weet u zeker dat de gebruiker bestaat? of naja, bestond? er zijn maar " + _AmountOfUser + " klanten opgeslagen");
+                        Console.WriteLine("foutmelding 0003! weet u zeker dat de gebruiker bestaat? of naja, bestond in dit geval? er zijn maar " + _AmountOfUser + " klanten opgeslagen");
+                    }
+                }
+                else if(_askProg == "B")
+                {
+                    Console.WriteLine("ok, toets de nummer in van de gebruiker: ");
+                    int _checkUser = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine(" ");
+
+                    Database.GetList()[_checkUser].WriteAll(); // <-- thx GPT :P
+
+                    Console.WriteLine(" ");
+                    Console.WriteLine("wilt u verder gaan met bewerken? Ziet er al perfect uit! J = ja, N = nee");
+
+                    string _userModify = Console.ReadLine();
+
+                    
+
+                    if(_userModify == "J")
+                    {
+                        Console.WriteLine(" ");
+                        Console.WriteLine("voer de ID van de gebruiker in:");
+                        int _findUser = int.Parse(Console.ReadLine());
+                        Console.Clear();
+
+                        Database.GetList()[_checkUser].WriteAll();
+                        Console.WriteLine(" ");
+
+
+                        // Database.GetList()[_checkUser];
+
+                        Database.GetList().RemoveAt(_findUser);
+
+
+                            Console.WriteLine("naam: ");
+                            string _input = Console.ReadLine();
+
+                            Console.WriteLine("address: ");
+                            string _input2 = Console.ReadLine();
+
+                            Console.WriteLine("email: ");
+                            string _input3 = Console.ReadLine();
+
+                            Console.WriteLine("telefoon nummer: ");
+                            string _input4 = Console.ReadLine();
+
+                            Console.WriteLine("wachtwoord: ");
+                            string _input5 = Console.ReadLine();
+
+                            Console.WriteLine("geboortedatum dd/mm: ");
+                            string _input6 = Console.ReadLine();
+
+                            Console.WriteLine("geboortejaar: ");
+                            int _input7 = int.Parse(Console.ReadLine());
+
+                            if (_input7 >= 2027 || _input7 <= 1850) // adjust when the maximum year is the current year, enter the current year +1
+                            {
+                                Console.WriteLine(" ");
+                                Console.WriteLine("foutmelding 0002! weet u zeker dat de geboortejaar correct is ingevoerd? de jaartal is automatisch gezet naar 1950");
+                                _input7 = 1950;
+                            }
+
+                            _input7 = 2025 - _input7;
+
+                            User _newUserName = new User(_findUser, _input, _input2, _input3, _input4, _input5, _input6, _input7); 
+
+
+                            
+                            Database.EditUser(_findUser, _newUserName);
+
+
+
+
+                            // delete da thing
+                            // add da thing back but different
+                        
+                    }
+                    else if (_userModify == "N")
+                    {
+                        Console.WriteLine("see, told ya!");
                     }
                 }
                 else
