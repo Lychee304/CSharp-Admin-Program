@@ -275,7 +275,7 @@ namespace AdminProgramProject
 
                             User _newUserName = new User(_findUser, _input, _input2, _input3, _input4, _input5, _input6, _input7); 
 
-
+                            
                             
                             Database.EditUser(_findUser, _newUserName);
 
