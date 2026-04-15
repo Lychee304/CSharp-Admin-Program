@@ -75,6 +75,7 @@ namespace AdminProgramProject
 
                     if (_input7 >= 2027 || _input7 <= 1850) // adjust when the maximum year is the current year, enter the current year +1
                     {
+                        Console.WriteLine(" ");
                         Console.WriteLine("foutmelding 0002! weet u zeker dat de geboortejaar correct is ingevoerd? de jaartal is automatisch gezet naar 1950");
                         _input7 = 1950;
                     }
@@ -96,10 +97,12 @@ namespace AdminProgramProject
 
                     if (_askView == "J")
                     {
+                        Console.WriteLine(" ");
                         _userName.WriteAll();
                     }
                     else if (_askView == "N")
                     {
+                        Console.WriteLine(" ");
                         Console.WriteLine(_input + " is toegevoegd met nummer " + _countingID + "!");
                     }
 
@@ -110,7 +113,7 @@ namespace AdminProgramProject
                     Console.WriteLine("foutmelding 0001!, weet u zeker dat de geboortedatum in cijfers zijn ingevoerd? bijv: 1990 ipv negentien negentig");
                 }
 
-                Console.WriteLine("wil je de informatie veranderen of afsluiten? N = Nieuw persoon, A = Afsluiten, C = Checken voor een aangemaakte gebruiker");
+                Console.WriteLine("wilt u de klant informatie veranderen, verwijderen of het programma afsluiten? N = Nieuw persoon, A = Afsluiten, C = Checken voor een aangemaakte gebruiker, V = Klant verwijderen");
                 string _askProg = Console.ReadLine(); // prog = progress
 
 
@@ -127,7 +130,9 @@ namespace AdminProgramProject
 
                     if (_userSearch == "A")
                     {
+                        Console.WriteLine(" ");
                         Database.LoopUserList();
+
                     } else if (_userSearch == "N")
                     {
                         try
@@ -135,11 +140,13 @@ namespace AdminProgramProject
                             Console.WriteLine("ok, toets de nummer in van de gebruiker: ");
                             int _checkUser = int.Parse(Console.ReadLine());
 
+                            Console.WriteLine(" ");
+
                             Database.GetList()[_checkUser].WriteAll(); // <-- thx GPT :P
 
                         } catch (Exception)
                         {
-                            Console.WriteLine("foutmelding 0003! weet u zeker dat de gebruiker bestaat? er zijn " + _AmountOfUser + " klanten opgeslagen");
+                            Console.WriteLine("foutmelding 0003! weet u zeker dat de gebruiker bestaat? er zijn maar " + _AmountOfUser + " klanten opgeslagen");
                         }
                     }
                     //  User _userName = ShowUserWID(_countingID);  // _checkUser should be var type User, not string
@@ -163,6 +170,37 @@ namespace AdminProgramProject
                     Console.Clear();
                     _countingID++;
 
+                } 
+                else if (_askProg == "V")
+                {
+                    Console.Clear();
+
+
+                    try
+                    {
+                        Console.WriteLine("ok, toets de nummer in van de gebruiker: ");
+                        int _checkUser = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine(" ");
+
+                        Database.GetList()[_checkUser].WriteAll(); // <-- thx GPT :P
+
+                        Console.WriteLine(" "); 
+                        Console.WriteLine("Weet u zeker dat u deze klant wilt verwijderen? J = ja, N = nee");
+
+                        string _deleteUser = Console.ReadLine();
+
+                        if(_deleteUser == "J")
+                        {
+                            Console.Clear();
+                            Database.GetList().RemoveAt(_checkUser);
+                            Console.WriteLine("gebruiker met ID '" + _checkUser + "' is verwijderd, het deed gelukkig geen pijn");
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("foutmelding 0003! weet u zeker dat de gebruiker bestaat? of naja, bestond? er zijn maar " + _AmountOfUser + " klanten opgeslagen");
+                    }
                 }
                 else
                 {
