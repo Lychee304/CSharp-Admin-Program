@@ -54,6 +54,11 @@ namespace AdminProgramProject
             {
                 try
                 {
+
+
+                    Console.WriteLine("Er wordt een nieuwe klant aangemaakt omdat er geen klanten zijn toegevoegd");
+                    Console.WriteLine(" ");
+
                     Console.WriteLine("naam: ");
                     string _input = Console.ReadLine();
 
@@ -115,7 +120,17 @@ namespace AdminProgramProject
                     Console.WriteLine("foutmelding 0001!, weet u zeker dat de geboortedatum in cijfers zijn ingevoerd? bijv: 1990 ipv negentien negentig");
                 }
 
-                Console.WriteLine("wilt u de klant informatie veranderen, verwijderen of het programma afsluiten? N = Nieuw persoon, A = Afsluiten, C = Checken voor een aangemaakte gebruiker, V = Klant verwijderen");
+
+
+                Console.WriteLine(" ");
+                Console.WriteLine(" ");
+                Console.WriteLine("Wat wenst u te doen?");
+                Console.WriteLine(" ");
+                Console.WriteLine(" - N = Nieuw persoon");
+                Console.WriteLine(" - A = Afsluiten");
+                Console.WriteLine(" - C = Checken voor een aangemaakte gebruiker");
+                Console.WriteLine(" - V = Klant verwijderen");
+                Console.WriteLine(" - B = Klant bewerken");
                 string _askProg = Console.ReadLine(); // prog = progress
 
 
@@ -187,9 +202,10 @@ namespace AdminProgramProject
 
                         Database.GetList()[_checkUser].WriteAll(); // <-- thx GPT :P
 
-                        Console.WriteLine(" "); 
+                        Console.WriteLine(" ");
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Weet u zeker dat u deze klant wilt verwijderen? J = ja, N = nee");
-
+                        Console.ForegroundColor = ConsoleColor.Gray;
                         string _deleteUser = Console.ReadLine();
 
 
@@ -229,9 +245,6 @@ namespace AdminProgramProject
 
                     if(_userModify == "J")
                     {
-                        Console.WriteLine(" ");
-                        Console.WriteLine("voer de ID van de gebruiker in:");
-                        int _findUser = int.Parse(Console.ReadLine());
                         Console.Clear();
 
                         Database.GetList()[_checkUser].WriteAll();
@@ -240,7 +253,7 @@ namespace AdminProgramProject
 
                         // Database.GetList()[_checkUser];
 
-                        Database.GetList().RemoveAt(_findUser);
+                        Database.GetList().RemoveAt(_checkUser);
 
 
                             Console.WriteLine("naam: ");
@@ -253,7 +266,7 @@ namespace AdminProgramProject
                             string _input3 = Console.ReadLine();
 
                             Console.WriteLine("telefoon nummer: ");
-                            string _input4 = Console.ReadLine();
+                            string _input4 = Console.ReadLine(); 
 
                             Console.WriteLine("wachtwoord: ");
                             string _input5 = Console.ReadLine();
@@ -273,11 +286,11 @@ namespace AdminProgramProject
 
                             _input7 = 2025 - _input7;
 
-                            User _newUserName = new User(_findUser, _input, _input2, _input3, _input4, _input5, _input6, _input7); 
+                            User _newUserName = new User(_checkUser, _input, _input2, _input3, _input4, _input5, _input6, _input7); 
 
                             
                             
-                            Database.EditUser(_findUser, _newUserName);
+                            Database.EditUser(_checkUser, _newUserName);
 
 
 

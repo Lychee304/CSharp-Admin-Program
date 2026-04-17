@@ -41,11 +41,11 @@ namespace AdminProgramProject
             UsersList.Add(newUser);
         }
 
-        public void EditUser(int _findUser, User newUser)
+        public void EditUser(int _checkUser, User newUser)
         {
             
             UsersList.Add(newUser);
-            UsersList.Insert(_findUser, newUser);
+            UsersList.Insert(_checkUser, newUser);
         }
     }
 }
